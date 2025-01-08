@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.light-mode {
+    background-color: #c0c0c0ab;
+    color: black;
+    h1, h2, h3 {
+        color: #4296a5;
+    }
+    #skills {
+        background-color: black;
+        color: white;
+    }
+    .project-title a {
+        color: black;
+    }
+    .project-title a:hover {
+        color: #4296a5;
+    }
+}
+
+.navbar, .footer {
+    background-color: black !important;
+}
+
+.navbar-brand {
+    color: #47d3ec !important;
+    font-size: 2em !important;
+}
+
+.navbar-nav a:hover {
+    color: #47d3ec !important;
+}
+
+.navbar-nav button:hover {
+    color: #47d3ec !important;
+ }
+
+.navbar-toggler:hover {
+    color: #47d3ec !important;
+    background-color: #47d3ec !important;
+}
+
+h1, h2, h3 {
+    color: #47d3ec;
+}
+
+#about {
+    margin-bottom: 10px;
+}
+
+#skills {
+    background-image: url('images/dev.svg');
+    background-size: cover;
+    background-attachment: fixed;
+    box-shadow: inset 6px 6px 13px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#skills-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#skills-list li {
+    margin-top: 10px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+#skills-list img {
+    margin-left: 10px;
+    width: 35px;
+}
+
+#html-icon:hover {
+    color: #E44F26;
+}
+
+#css-icon:hover {
+    color: #49B2DF;
+}
+
+#b-icon:hover {
+    color: #806D9D;
+}
+
+#js-icon:hover {
+    color: #d8c218;
+}
+
+#ts-icon:hover {
+    color: #007ACC;
+}
+
+#r-icon:hover {
+    color: #00C0E3;
+}
+
+#g-icon:hover {
+    color: #DE4C36;
+}
+
+#gh-icon:hover {
+    color: #6B49FF;
+}
+
+#f-icon:hover {
+    color: #24CB71;
+}
+
+.project-description {
+    margin-bottom: 50px;
+}
+
+.project-title {
+    margin-top: 15px;
+}
+
+.project-title a {
+    text-decoration: none;
+    color: white;
+}
+
+.project-title a:hover {
+    color: #47d3ec;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: #47d3ec !important;
+    border-radius: 50%;
+}
+
+.carousel-indicators .active {
+    background-color: #47d3ec;
+}
+
+footer {
+    color: #47d3ec;
+}
+
+footer a {
+    font-size: 1.1em !important;
+    text-decoration: none;
+    color: white;
+}
+
+#github:hover {
+    color: #7937A0 !important;
+    transform: scale(1.1);
+}
+
+#linkedin:hover {
+    color: #0A66C2 !important;
+    transform: scale(1.1);
+}
+
+#whatsapp:hover {
+    color: #2CD46B !important;
+    transform: scale(1.1);
+}
+
+#email:hover {
+    color: #8b9faa !important;
+    transform: scale(1.1);
+}
