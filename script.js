@@ -1,5 +1,11 @@
 const body = document.body;
 const button = document.getElementById('button')
+const sobre = document.getElementById('sobre')
+const titulo = document.getElementById('titulo')
+const paragrafo1 = document.getElementById('paragrafo1')
+const paragrafo2 = document.getElementById('paragrafo2')
+const paragrafo3 = document.getElementById('paragrafo3')
+const paragrafo4 = document.getElementById('paragrafo4')
 
 function toggleLightMode() {
     body.classList.toggle('light-mode')
@@ -9,3 +15,21 @@ function toggleLightMode() {
         button.innerHTML = '<i class="bi bi-brightness-high-fill"></i>'
     }
 }
+
+sobre.addEventListener('click', () => {
+    titulo.classList.remove('animate__slideInLeft')
+    paragrafo1.classList.remove('animate__fadeInDown')
+    paragrafo2.classList.remove('animate__fadeInDown')
+    paragrafo3.classList.remove('animate__fadeInDown')
+    paragrafo4.classList.remove('animate__fadeInDown')
+    void titulo.offsetWidth
+    void paragrafo1.offsetWidth
+    void paragrafo2.offsetWidth
+    void paragrafo3.offsetWidth
+    void paragrafo4.offsetWidth
+    titulo.classList.add('animate__slideInLeft')
+    paragrafo1.classList.add('animate__fadeInDown')
+    paragrafo2.classList.add('animate__fadeInDown')
+    paragrafo3.classList.add('animate__fadeInDown')
+    paragrafo4.classList.add('animate__fadeInDown')
+})
