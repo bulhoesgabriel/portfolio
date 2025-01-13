@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,17 +14,20 @@ body {
     background-color: #c0c0c0ab;
     color: black;
     h1, h2, h3 {
-        color: #4296a5;
+        color: #286a75;
     }
     #skills {
         background-color: black;
         color: white;
     }
+    #skills h2 {
+        color: #47d3ec;
+    }
     .project-title a {
         color: black;
     }
     .project-title a:hover {
-        color: #4296a5;
+        color: #286a75;
     }
     .project-links a {
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
@@ -55,7 +60,12 @@ body {
 }
 
 h1, h2, h3 {
+    font-family: "Jura", serif;
     color: #47d3ec;
+}
+
+header, footer, #skills, .project-links {
+    font-family: "Jura", serif;
 }
 
 #about {
@@ -79,7 +89,6 @@ h1, h2, h3 {
 
 #skills-list li {
     margin-top: 10px;
-    font-size: 0.9em;
     font-weight: 400;
 }
 
@@ -195,3 +204,9 @@ footer a {
     color: #8b9faa !important;
     transform: scale(1.1);
 }
+
+@media (max-width: 480px) {
+    #skills {
+      background-attachment: scroll;
+    }
+  }
