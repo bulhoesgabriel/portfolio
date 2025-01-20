@@ -29,6 +29,9 @@ body {
     .project-title a:hover {
         color: #286a75;
     }
+    #cv {
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
     .project-links a {
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
     }
@@ -70,6 +73,23 @@ header, footer, #skills, .project-links {
 
 #about {
     margin-bottom: 10px;
+}
+
+#cv {
+    display: inline-block;
+    font-family: "Jura", serif;
+    text-decoration: none;
+    background-color: #47d3ec83;
+    color: white;
+    padding: 4px 8px;
+    font-weight: 400;
+    font-size: 1.2em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px 1px rgba(255, 255, 255, 0.2);
+}
+
+#cv:hover {
+    background-color: #47d3ec;
 }
 
 #skills {
