@@ -13,8 +13,41 @@ body {
 .light-mode {
     background-color: #c0c0c0ab;
     color: black;
+    .navbar, .footer {
+        background-color: #D4D4D4 !important;
+    }
+    .navbar-brand {
+        color: #246C79 !important;
+    }
+    .footer {
+        color: #246C79 !important;
+    }
+    .footer a {
+        color: black !important;
+    }
+    .navbar a:hover {
+        color: #246C79 !important;
+    }
+    #button:hover {
+        color: #246C79 !important;
+    }
+    .navbar-nav button:hover {
+        color: #246C79 !important;
+     }
+    .navbar-toggler:hover {
+        color: #246C79 !important;
+        background-color: #246C79 !important;
+    }
     h1, h2, h3 {
-        color: #286a75;
+        color: #246C79;
+    }
+    #cv {
+        background-color: #246C79;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+    #cv:hover {
+        background-color: white;
+        color: #246C79;
     }
     #skills {
         background-color: black;
@@ -27,16 +60,25 @@ body {
         color: black;
     }
     .project-title a:hover {
-        color: #286a75;
-    }
-    #cv {
-        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+        color: #246C79;
     }
     .project-links a {
+        background-color: #246C79;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
     }
+    .project-links a:hover {
+        background-color: white;
+        color: #246C79;
+    }
     .carousel-control-next-icon, .carousel-control-prev-icon {
+        background-color: #246C79 !important;
         box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1) !important;
+    }
+    .carousel-indicators .active {
+        background-color: #246C79;
+    }
+    #email:hover {
+        color: white !important;
     }
 }
 
@@ -47,6 +89,10 @@ body {
 .navbar-brand {
     color: #47d3ec !important;
     font-size: 2em !important;
+}
+
+.navbar-nav a {
+    font-weight: 500 !important;
 }
 
 .navbar-nav a:hover {
@@ -196,6 +242,7 @@ header, footer, #skills, .project-links {
 }
 
 footer {
+    font-weight: 500 !important;
     color: #47d3ec;
 }
 

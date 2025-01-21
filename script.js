@@ -1,4 +1,4 @@
-const body = document.body;
+const body = document.body
 const button = document.getElementById('button')
 const sobre = document.getElementById('sobre')
 const titulo = document.getElementById('titulo')
@@ -7,13 +7,16 @@ const paragrafo2 = document.getElementById('paragrafo2')
 const paragrafo3 = document.getElementById('paragrafo3')
 const paragrafo4 = document.getElementById('paragrafo4')
 const cv = document.getElementById('cv')
+const nav = document.getElementById('nav')
 
 function toggleLightMode() {
     body.classList.toggle('light-mode')
     if (body.classList.contains('light-mode')) {
         button.innerHTML = '<i class="bi bi-moon-fill"></i>'
+        nav.classList.remove('navbar-dark')
     } else {
         button.innerHTML = '<i class="bi bi-brightness-high-fill"></i>'
+        nav.classList.add('navbar-dark')
     }
 }
 
