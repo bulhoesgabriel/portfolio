@@ -23,6 +23,7 @@
                 <div class="collapse navbar-collapse" id="menuNavbar">
                     <div class="navbar-nav ms-auto align-items-center lead gap-2">
                         <a href="#" class="nav-link active" id="sobre">Sobre</a>
+                        <a href="#skills" class="nav-link active">Habilidades</a>
                         <a href="#projects" class="nav-link active">Projetos</a>
                         <button onclick="toggleLightMode()" id="button" class="nav-link active"><i class="bi bi-brightness-high-fill"></i></button>
                     </div>
@@ -32,47 +33,41 @@
     </header>
     <div class="invisible p-5"></div>
     <div class="container mt-1">
-        <main id="about" class="row">
-            <section class="col-md-8 mt-2">
-                <h1 class="mb-3 animate__animated animate__bounceInLeft animate_slower" id="titulo">Olá, me chamo Gabriel</h1>
-                <p class="lead animate__animated animate__fadeInDown animate__slower" id="paragrafo1">Desenvolvedor front-end focado em criar interfaces atraentes, responsivas e eficientes.</p>
-                <p class = "lead animate__animated animate__fadeInDown animate__slower" id="paragrafo2">Meu objetivo é transformar ideias em experiências visuais impactantes, garantindo que cada projeto seja funcional, intuitivo e esteticamente agradável.</p>
-                <p class="lead animate__animated animate__fadeInDown animate__slower" id="paragrafo3">Meu trabalho combina atenção aos detalhes, design centrado no usuário e compromisso com as melhores práticas de desenvolvimento web.</p>
-                <p class="mb-4 lead animate__animated animate__fadeInDown animate__slower" id="paragrafo4">Acredito que tecnologia é a ponte entre pessoas e soluções, e busco constantemente aprender e inovar para oferecer o melhor resultado possível em cada projeto.</p>
-                <a href="doc/cv.pdf" download class="animate__animated animate__bounceInLeft animate_slow" id="cv">Currículo <i class="bi bi-download"></i></a>
-            </section>
-            <div id="skills" class="col-md-4 mt-5 text-end">
-                <h2 class="mb-3">Habilidades</h2>
-                <ul id="skills-list" class="lead">
-                    <li id="html-icon">HTML<img src="images/html.svg"></li>
-                    <li id="css-icon">CSS<img src="images/css.svg"></li>
-                    <li id="b-icon">Bootstrap<img src="images/bootstrap.svg"><li>
-                    <li id="js-icon">JavaScript<img src="images/js.svg"></li>
-                    <li id="ts-icon">TypeScript<img src="images/ts.svg"></li>
-                    <li id="r-icon">React.js<img src="images/react.svg"></i></li>
-                    <li id="g-icon">Git<img src="images/git.svg"></li>
-                    <li id="gh-icon">GitHub<img src="images/github.svg"></li>
-                    <li id="f-icon">Figma<img src="images/figma.svg"></li>
-                </ul>
-            </div>
+        <main class="about mt-2 col-md-8 m-auto d-flex flex-column">
+            <h1 class="mb-3 animate__animated animate__bounceInLeft animate_slower" id="titulo">Bem-vindo ao meu portfólio!</h1>
+            <p class="lead animate__animated animate__fadeInDown animate__slower" id="paragrafo1">Sou um desenvolvedor front-end focado em criar interfaces atraentes, responsivas e eficientes.</p>
+            <p class = "lead animate__animated animate__fadeInDown animate__slower" id="paragrafo2">Meu objetivo é transformar ideias em experiências visuais impactantes, garantindo que cada projeto seja funcional, intuitivo e esteticamente agradável.</p>
+            <p class="lead animate__animated animate__fadeInDown animate__slower" id="paragrafo3">Meu trabalho combina atenção aos detalhes, design centrado no usuário e compromisso com as melhores práticas de desenvolvimento web.</p>
+            <p class="mb-4 lead animate__animated animate__fadeInDown animate__slower" id="paragrafo4">Acredito que tecnologia é a ponte entre pessoas e soluções, e busco constantemente aprender e inovar para oferecer o melhor resultado possível em cada projeto.</p>
+            <a href="doc/cv.pdf" download class="align-self-end animate__animated animate__bounceInRight animate_slow" id="cv">Currículo <i class="bi bi-download"></i></a>
         </main>
+        <div id="skills" class="invisible p-5"></div>
+        <aside class="skills col-md-10 m-auto text-center">
+            <h2 class="mb-4">Habilidades</h2>
+            <img src="images/html.svg">
+            <img src="images/css.svg">
+            <img src="images/bootstrap.svg">
+            <img src="images/js.svg">
+            <img src="images/ts.svg">
+            <img src="images/react.svg">
+            <img src="images/git.svg">
+            <img src="images/github.svg">
+        </aside>
         <div id="projects" class="invisible p-4"></div>
-        <div class="projects mt-3 text-center col-md-6 m-auto">
+        <section class="projects mt-3 text-center col-md-6 m-auto">
             <h2 class="mb-4">Projetos</h2>
             <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="ads" data-bs-touch="false">
                 <div class="carousel-indicators">
                     <button class="active" data-bs-target="#ads" data-bs-slide-to="0"></button>
                     <button data-bs-target="#ads" data-bs-slide-to="1"></button>
                     <button data-bs-target="#ads" data-bs-slide-to="2"></button>
-                    <button data-bs-target="#ads" data-bs-slide-to="3"></button>
-                    <button data-bs-target="#ads" data-bs-slide-to="4"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
                         <img src="images/snap.JPG" class="d-block w-100">
                         <div class="project-description">
-                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/frontend-mentor/intro-section-with-dropdown-navigation/" target="_blank">Intro Section</a></h3>
-                            <p class="lead">Desafio do Front-end Mentor desenvolvido com HTML, CSS e JavaScript</p>
+                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/frontend-mentor/intro-section-with-dropdown-navigation/" target="_blank">Snap</a></h3>
+                            <p class="lead">Intro Section - HTML, CSS & JS</p>
                             <div class="project-links">
                                 <a href="https://github.com/bulhoesgabriel/frontend-mentor/tree/main/intro-section-with-dropdown-navigation" target="_blank">Código</a>
                                 <a href="https://bulhoesgabriel.github.io/frontend-mentor/intro-section-with-dropdown-navigation/" target="_blank">Site</a>
@@ -82,8 +77,8 @@
                     <div class="carousel-item" data-bs-interval="5000">
                         <img src="images/gta.JPG" class="d-block w-100">
                         <div class="project-description">
-                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/lp-gta/" target="_blank">GTA Landing Page</a></h3>
-                            <p class="lead">Landing Page do GTA replicada com HTML, CSS e JavaScript</p>
+                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/lp-gta/" target="_blank">GTA V</a></h3>
+                            <p class="lead">Landing Page - HTML, CSS & JS</p>
                             <div class="project-links">
                                 <a href="https://github.com/bulhoesgabriel/lp-gta" target="_blank">Código</a>
                                 <a href="https://bulhoesgabriel.github.io/lp-gta/" target="_blank">Site</a>
@@ -94,31 +89,9 @@
                         <img src="images/costs.JPG" class="d-block w-100">
                         <div class="project-description">
                             <h3 class="project-title"><a href="https://github.com/bulhoesgabriel/costs" target="_blank">Costs</a></h3>
-                            <p class="lead">Site de gestão de projetos desenvolvido com React.js</p>
+                            <p class="lead">Site para gestão de projetos - React.js</p>
                             <div class="project-links">
                                 <a href="https://github.com/bulhoesgabriel/costs" target="_blank">Código</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="images/login.JPG" class="d-block w-100">
-                        <div class="project-description">
-                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/login/" target="_blank">Login Page</a></h3>
-                            <p class="lead">Tela de Login desenvolvida com HTML e CSS</p>
-                            <div class="project-links">
-                                <a href="https://github.com/bulhoesgabriel/login" target="_blank">Código</a>
-                                <a href="https://bulhoesgabriel.github.io/login/" target="_blank">Site</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="5000">
-                        <img src="images/surf.JPG" class="d-block w-100">
-                        <div class="project-description">
-                            <h3 class="project-title"><a href="https://bulhoesgabriel.github.io/surfnews/" target="_blank">Surf News</a></h3>
-                            <p class="lead">Primeiro site que desenvolvi, utilizando HTML e CSS</p>
-                            <div class="project-links">
-                                <a href="https://github.com/bulhoesgabriel/surfnews" target="_blank">Código</a>
-                                <a href="https://bulhoesgabriel.github.io/surfnews/" target="_blank">Site</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +105,7 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
     <div class="invisible p-5"></div>
     <footer class="footer text-center fixed-bottom p-3 lead d-flex">Gabriel Bulhões

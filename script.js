@@ -21,22 +21,22 @@ function toggleLightMode() {
 }
 
 sobre.addEventListener('click', () => {
-    titulo.classList.remove('animate__slideInLeft')
+    titulo.classList.remove('animate__bounceInLeft')
     paragrafo1.classList.remove('animate__fadeInDown')
     paragrafo2.classList.remove('animate__fadeInDown')
     paragrafo3.classList.remove('animate__fadeInDown')
     paragrafo4.classList.remove('animate__fadeInDown')
-    cv.classList.remove('animate__bounceInLeft')
+    cv.classList.remove('animate__bounceInRight')
     void titulo.offsetWidth
     void paragrafo1.offsetWidth
     void paragrafo2.offsetWidth
     void paragrafo3.offsetWidth
     void paragrafo4.offsetWidth
     void cv.offsetWidth
-    titulo.classList.add('animate__slideInLeft')
+    titulo.classList.add('animate__bounceInLeft')
     paragrafo1.classList.add('animate__fadeInDown')
     paragrafo2.classList.add('animate__fadeInDown')
     paragrafo3.classList.add('animate__fadeInDown')
     paragrafo4.classList.add('animate__fadeInDown')
-    cv.classList.add('animate__bounceInLeft')
+    cv.classList.add('animate__bounceInRight')
 })
