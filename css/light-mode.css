@@ -1,0 +1,85 @@
+.light-mode {
+
+    background-color: #D4D4D4;
+    color: rgb(0, 0, 0);
+
+    .navbar {
+        background-color: #D4D4D4;
+    }
+
+    .navbar-brand {
+        color: #246C79 !important;
+    }
+
+    footer {
+        background-color: #D4D4D4 !important;
+        color: #246C79 !important;
+    }
+
+    footer a {
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .navbar a:hover {
+        color: #246C79 !important;
+    }
+
+    #button:hover {
+        color: #246C79 !important;
+    }
+
+    .navbar-nav button:hover {
+        color: #246C79 !important;
+     }
+
+    .navbar-toggler:hover {
+        color: #246C79 !important;
+        background-color: #246C79 !important;
+    }
+
+    h1, h2, h3 {
+        color: #246C79;
+    }
+
+    #cv {
+        background-color: #246C79;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    #cv:hover {
+        background-color: rgb(255, 255, 255);
+        color: #246C79;
+    }
+
+    .project-title a {
+        color: #246C79;
+    }
+
+    .project-title a:hover {
+        color: rgb(255, 255, 255);
+    }
+
+    .project-links a {
+        background-color: #246C79;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-links a:hover {
+        background-color: rgb(255, 255, 255);
+        color: #246C79;
+    }
+
+    .carousel-control-next-icon, .carousel-control-prev-icon {
+        background-color: #246C79 !important;
+        box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .carousel-indicators .active {
+        background-color: #246C79;
+    }
+
+    #email:hover {
+        color: #246C79 !important;
+    }
+    
+}

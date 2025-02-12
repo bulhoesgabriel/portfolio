@@ -1,0 +1,33 @@
+footer {
+    font-size: 1.1em !important;
+    font-weight: 500 !important;
+    color: #47d3ec;
+    background-color: rgb(0, 0, 0);
+}
+
+footer a {
+    font-size: 1.2em !important;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#github:hover {
+    color: #7937A0 !important;
+}
+
+#linkedin:hover {
+    color: #0A66C2 !important;
+}
+
+#whatsapp:hover {
+    color: #2CD46B !important;
+}
+
+#email:hover {
+    color: #47d3ec !important;
+}
+
+#github:hover, #linkedin:hover, #whatsapp:hover, #email:hover {
+    transform: scale(1.2);
+    transition: ease 0.3s;
+}

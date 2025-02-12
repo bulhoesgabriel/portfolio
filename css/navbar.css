@@ -1,0 +1,26 @@
+.navbar {
+    background: rgb(0, 0, 0);
+}
+
+.navbar-brand {
+    color: #47d3ec !important;
+    font-size: 2em !important;
+}
+
+.navbar-nav a {
+    font-size: 0.9em !important;
+    font-weight: 500 !important;
+}
+
+.navbar-nav a:hover {
+    color: #47d3ec !important;
+}
+
+.navbar-nav button:hover {
+    color: #47d3ec !important;
+ }
+
+.navbar-toggler:hover {
+    color: #47d3ec !important;
+    background-color: #47d3ec !important;
+}

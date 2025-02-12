@@ -1,0 +1,28 @@
+.skills {
+    box-sizing: content-box;
+    background-image: url('../img/skills.png');
+    background-size: cover;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.skills img {
+    box-sizing: content-box;
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+}
+
+.skills img:hover {
+    transform: scale(1.3);
+    transition: ease 0.4s;
+}
+
+.skills .html-css {
+    height: 45px;
+    width: 45px;
+}
+
+.skills .js-ts {
+    border-radius: 18px;
+}
