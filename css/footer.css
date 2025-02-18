@@ -28,6 +28,6 @@ footer a {
 }
 
 #github:hover, #linkedin:hover, #whatsapp:hover, #email:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: ease 0.3s;
 }

@@ -3,26 +3,34 @@
     background-image: url('../img/skills.png');
     background-size: cover;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .skills img {
     box-sizing: content-box;
-    height: 40px;
-    width: 40px;
-    padding: 10px;
+    height: 50px;
+    width: 50px;
+    padding: 15px;
 }
 
 .skills img:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
     transition: ease 0.4s;
 }
 
-.skills .html-css {
-    height: 45px;
-    width: 45px;
+.js-ts {
+    border-radius: 20px;
 }
 
-.skills .js-ts {
-    border-radius: 18px;
+.skill {
+    position: absolute;
+    z-index: 500;
+    background: rgba(0,0,0,.6);
+    box-shadow: 0 0 0 2px #47d3ec, 0 0 0 6px rgba(0,0,0,.6);
+    padding: .3rem;
+    color: rgb(255, 255, 255);
+    font-family: "Jura", serif;
+    font-weight: bold;
+    font-size: .875rem;
+    border-radius: 5px;
 }
