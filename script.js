@@ -38,40 +38,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar background on scroll
+// Navbar scroll state
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(26, 26, 26, 0.98)';
-    } else {
-        navbar.style.background = 'rgba(26, 26, 26, 0.95)';
+    if (navbar) {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     }
 });
-
-// Animate skill bars when they come into view
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const skillBars = entry.target.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const width = bar.getAttribute('data-width');
-                setTimeout(() => {
-                    bar.style.width = width + '%';
-                }, 200);
-            });
-        }
-    });
-}, observerOptions);
-
-const skillsSection = document.querySelector('.skills');
-if (skillsSection) {
-    skillsObserver.observe(skillsSection);
-}
 
 // Animate elements on scroll
 const animateOnScroll = new IntersectionObserver((entries) => {
@@ -87,7 +64,7 @@ const animateOnScroll = new IntersectionObserver((entries) => {
 });
 
 // Add animation classes to elements
-document.querySelectorAll('.project-card, .about-content, .contact-content').forEach(el => {
+document.querySelectorAll('.project-card, .about-content, .contact-content, .skill-category-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -108,19 +85,19 @@ if (contactForm) {
 
         // Simple validation
         if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
+            showNotification('Por favor, preencha todos os campos', 'error');
             return;
         }
 
         if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
+            showNotification('Por favor, insira um endereço de e-mail válido', 'error');
             return;
         }
 
         // Get submit button
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
+        submitBtn.textContent = 'Enviando...';
         submitBtn.disabled = true;
         submitBtn.style.opacity = '0.7';
         submitBtn.style.cursor = 'not-allowed';
@@ -133,14 +110,14 @@ if (contactForm) {
         })
         .then(response => {
             if (response.ok) {
-                showNotification('Message sent successfully, I will reply to you soon!', 'success');
+                showNotification('Mensagem enviada com sucesso, responderei em breve!', 'success');
                 contactForm.reset();
             } else {
-                showNotification('There was a problem sending your message.', 'error');
+                showNotification('Houve um problema ao enviar sua mensagem.', 'error');
             }
         })
         .catch(() => {
-            showNotification('There was a problem sending your message.', 'error');
+            showNotification('Houve um problema ao enviar sua mensagem.', 'error');
         })
         .finally(() => {
             // Restore button
@@ -229,15 +206,19 @@ window.addEventListener('load', () => {
     }
 });
 
-// Parallax effect for hero section
+// Parallax effect for hero section (desktop only)
 window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
-    const rate = scrolled * -0.5;
-    
-    if (hero) {
-        hero.style.transform = `translateY(${rate}px)`;
+    if (!hero) return;
+
+    if (window.innerWidth <= 768) {
+        hero.style.transform = 'none';
+        return;
     }
+
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    hero.style.transform = `translateY(${rate}px)`;
 });
 
 // Add active class to navigation links based on scroll position
@@ -264,18 +245,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add CSS for active navigation link
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: #00d4ff !important;
-    }
-    
-    .nav-link.active::after {
-        width: 100% !important;
-    }
-`;
-document.head.appendChild(style);
+
 
 // Smooth reveal animation for stats
 const statsObserver = new IntersectionObserver((entries, observer) => {
