@@ -201,7 +201,7 @@ function typeWriter(element, text, speed = 100) {
 window.addEventListener('load', () => {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const originalText = heroTitle.textContent;
+        const originalText = heroTitle.textContent.trim();
         typeWriter(heroTitle, originalText, 50);
     }
 });
