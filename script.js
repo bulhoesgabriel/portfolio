@@ -38,17 +38,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll state
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-        if (window.scrollY > 40) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    }
-});
+// (Navbar scroll state handled in consolidated scroll handler below)
 
 // Animate elements on scroll
 const animateOnScroll = new IntersectionObserver((entries) => {
@@ -197,53 +187,66 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Initialize typing animation when page loads
-window.addEventListener('load', () => {
+// Initialize typing animation when DOM is ready (instant start, no waiting for images)
+function initTyping() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
         const originalText = heroTitle.textContent.trim();
-        typeWriter(heroTitle, originalText, 50);
+        typeWriter(heroTitle, originalText, 45);
     }
-});
+}
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTyping);
+} else {
+    initTyping();
+}
 
-// Parallax effect for hero section (desktop only)
+// Consolidated high-performance scroll listener (passive & rAF-throttled to avoid layout thrashing)
+const navbarEl = document.querySelector('.navbar');
+const heroEl = document.querySelector('.hero');
+const sectionElements = document.querySelectorAll('section[id]');
+const navLinkElements = document.querySelectorAll('.nav-link');
+
+let ticking = false;
 window.addEventListener('scroll', () => {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
+    if (!ticking) {
+        window.requestAnimationFrame(() => {
+            const scrollPos = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (window.innerWidth <= 768) {
-        hero.style.transform = 'none';
-        return;
+            // 1. Navbar scrolled class
+            if (navbarEl) {
+                if (scrollPos > 40) {
+                    navbarEl.classList.add('scrolled');
+                } else {
+                    navbarEl.classList.remove('scrolled');
+                }
+            }
+
+            // 2. Desktop hero subtle parallax
+            if (heroEl && window.innerWidth > 768) {
+                heroEl.style.transform = `translateY(${scrollPos * -0.25}px)`;
+            }
+
+            // 3. Active nav link tracking
+            let currentSectionId = '';
+            sectionElements.forEach(section => {
+                if (scrollPos >= section.offsetTop - 220) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinkElements.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            ticking = false;
+        });
+        ticking = true;
     }
-
-    const scrolled = window.pageYOffset;
-    const rate = scrolled * -0.5;
-    hero.style.transform = `translateY(${rate}px)`;
-});
-
-// Add active class to navigation links based on scroll position
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
+}, { passive: true });
 
 
 
@@ -299,69 +302,4 @@ document.querySelectorAll('.project-card').forEach(card => {
         this.style.transform = 'translateY(0) scale(1)';
     });
 });
-
-// Lazy loading for images
-const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.style.opacity = '1';
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-document.querySelectorAll('img').forEach(img => {
-    img.style.opacity = '0';
-    img.style.transition = 'opacity 0.5s ease';
-    imageObserver.observe(img);
-});
-
-// Add loading animation
-window.addEventListener('load', () => {
-    const loader = document.createElement('div');
-    loader.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #1a1a1a;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 10000;
-        transition: opacity 0.5s ease;
-    `;
-    
-    const spinner = document.createElement('div');
-    spinner.style.cssText = `
-        width: 50px;
-        height: 50px;
-        border: 3px solid #333;
-        border-top: 3px solid #00d4ff;
-        border-radius: 50%;
-        animation: spin 1s linear infinite;
-    `;
-    
-    const spinKeyframes = `
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = spinKeyframes;
-    document.head.appendChild(styleSheet);
-    
-    loader.appendChild(spinner);
-    document.body.appendChild(loader);
-    
-    setTimeout(() => {
-        loader.style.opacity = '0';
-        setTimeout(() => {
-            loader.remove();
-        }, 500);
-    }, 1000);
-});
+

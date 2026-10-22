@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gabriel Bulhões — Desenvolvedor Full Stack e UX/UI Designer. Do protótipo no Figma ao sistema em produção com Python, Django, React e PostgreSQL.">
     <title>Gabriel Bulhões | Full Stack Developer & UX/UI Designer</title>
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="background_hero.webp" type="image/webp">
+    <link rel="stylesheet" href="styles.css?v=6">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -87,7 +91,10 @@
     <span class="c-prop">mindset</span> = <span class="c-string">"Psicologia + Código"</span>
     
     <span class="c-keyword">def</span> <span class="c-func">build_solution</span>(self):
-        <span class="c-keyword">return</span> <span class="c-string">"Design intuitivo & código escalável"</span></code></pre>
+        <span class="c-keyword">return</span> (
+            <span class="c-string">"Design intuitivo &amp; "</span>
+            <span class="c-string">"código escalável"</span>
+        )</code></pre>
                     </div>
                 </div>
 
@@ -132,7 +139,7 @@
             <div class="about-content">
                 <div class="about-image-wrapper">
                     <div class="about-image">
-                        <img src="gabrielbulhoes.jpg" alt="Gabriel Bulhões" class="profile-img">
+                        <img src="gabrielbulhoes.webp" alt="Gabriel Bulhões" class="profile-img" width="528" height="483" loading="lazy" decoding="async">
                         <div class="image-gradient-overlay"></div>
                     </div>
                     <div class="photo-badge">
@@ -356,7 +363,7 @@
                 <!-- Projeto 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="projectify.jpg" alt="Projectify - Gerenciador de Projetos">
+                        <img src="projectify.webp" alt="Projectify - Gerenciador de Projetos" width="1887" height="852" loading="lazy" decoding="async">
                         <div class="project-overlay-gradient"></div>
                     </div>
                     <div class="project-content">
@@ -384,7 +391,7 @@
                 <!-- Projeto 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="advice-generator.jpg" alt="Advice Generator App">
+                        <img src="advice-generator.webp" alt="Advice Generator App" width="1889" height="840" loading="lazy" decoding="async">
                         <div class="project-overlay-gradient"></div>
                     </div>
                     <div class="project-content">
@@ -482,6 +489,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
